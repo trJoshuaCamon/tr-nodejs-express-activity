@@ -1,12 +1,14 @@
 const mysql = require("mysql2");
 
+const dotenv = require("dotenv").config();
+
 // Database configuration
 const database = {
-  host: "127.0.0.1", // Use 'host' instead of 'server'
-  user: "root",
-  password: "@Admin123",
-  database: "nodejstask",
-  port: 3306,
+  host: process.env.DBHOST, // Use 'host' instead of 'server'
+  user: process.env.DBUSER,
+  password: process.env.DBPASSWORD,
+  database: process.env.DBDATABASE,
+  port: process.env.DBPORT || 3306,
 };
 
 /**
